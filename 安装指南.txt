@@ -1,0 +1,80 @@
+# 神秘e站工具 - 安装指南
+
+## 方法一：直接运行 exe 文件（推荐）
+
+如果你有打包好的 `神秘e站工具.exe`，直接双击运行即可，无需安装任何依赖。
+
+---
+
+## 方法二：从源代码运行
+
+### 第一步：安装 Python
+
+1. 访问 https://www.python.org/downloads/
+2. 下载 Python 3.10 或更高版本
+3. 安装时勾选 **"Add Python to PATH"**
+4. 验证安装：
+   ```bash
+   python --version
+   ```
+
+### 第二步：安装依赖
+
+打开命令行（CMD 或 PowerShell），执行以下命令：
+
+```bash
+pip install requests
+pip install beautifulsoup4
+pip install configparser
+pip install customtkinter
+pip install pyinstaller
+```
+
+或者使用 requirements.txt 一键安装：
+
+```bash
+pip install -r requirements.txt
+```
+
+### 第三步：运行程序
+
+```bash
+python web_link_crawler_ctk.py
+```
+
+---
+
+## 方法三：打包成 exe
+
+如果你想自己打包成 exe 文件：
+
+```bash
+python -m PyInstaller --onefile --windowed --name "神秘e站工具" web_link_crawler_ctk.py
+```
+
+打包完成后，exe 文件在 `dist` 文件夹中。
+
+---
+
+## 常见问题
+
+### Q: 提示 "pip 不是内部或外部命令"
+A: 重新安装 Python，确保勾选 "Add Python to PATH"
+
+### Q: 提示 "ModuleNotFoundError: No module named 'xxx'"
+A: 执行 `pip install xxx` 安装缺失的模块
+
+### Q: 打包后 exe 无法运行
+A: 确保安装了 pyinstaller：`pip install pyinstaller`
+
+---
+
+## 依赖列表
+
+| 包名 | 用途 |
+|------|------|
+| requests | HTTP 请求 |
+| beautifulsoup4 | 网页解析 |
+| configparser | 配置文件读取 |
+| customtkinter | 现代化 GUI |
+| pyinstaller | 打包成 exe（可选） |
